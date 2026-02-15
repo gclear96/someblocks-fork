@@ -14,6 +14,13 @@ The statusbar is made from text output from commandline programs.
 Blocks are added and removed by editing the blocks.h header file.
 By default the blocks.h header file is created the first time you run make which copies the default config from blocks.def.h.
 This is so you can edit your status bar commands and they will not get overwritten in a future update.
+
+This fork's default `blocks.h` includes a daily-driver set: load, memory, temperature, network, volume, battery, and date.
+The volume block uses update signal `10`, so you can trigger instant refresh with:
+
+```sh
+pkill -SIGRTMIN+10 someblocks
+```
 # patches
 Here are some patches to someblocks that add features that I either don't want to merge in, or that require a dwl/somebar patch to work.
 I do not maintain these but I will take pull requests to update them.
